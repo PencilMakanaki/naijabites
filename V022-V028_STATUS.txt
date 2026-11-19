@@ -1,0 +1,11 @@
+NaijaBites V022-V028 delivery status
+
+V022: Inventory movement ledger schema and vendor inventory list/adjustment/history API added.
+V023: Delivery quote audit schema added; checkout quote integration remains outstanding.
+V024: Cancellation request schema added; customer/admin workflow remains outstanding.
+V025: Vendor payout and financial ledger schemas added; payout processing remains outstanding.
+V026: Rider profile, delivery and status event schemas added; dispatch API/UI remains outstanding.
+V027: Reviews, notifications and wallet schemas added; APIs/UI and transaction workflows remain outstanding.
+V028: Platform incidents and feature flag schemas added; admin UI/operations remain outstanding.
+
+This is an implementation foundation package, not a declaration of production completion. See docs/milestones/V022-V028_IMPLEMENTATION_HANDOFF.md.

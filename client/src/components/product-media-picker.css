@@ -1,0 +1,18 @@
+.media-picker{display:grid;gap:14px;margin:10px 0 18px;padding:16px;border:1px solid color-mix(in srgb,currentColor 18%,transparent);border-radius:14px}
+.media-picker h3{margin:0;font-size:1.05rem}
+.media-picker__search{display:flex;gap:10px;flex-wrap:wrap}
+.media-picker__search input{flex:1 1 220px;min-width:0;padding:10px 12px;border:1px solid color-mix(in srgb,currentColor 25%,transparent);border-radius:10px;font:inherit}
+.media-picker__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.media-picker__photo{display:grid;gap:4px;padding:4px;border:2px solid transparent;border-radius:10px;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.media-picker__photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block}
+.media-picker__photo small{opacity:.7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.media-picker__photo.is-chosen{border-color:#1a7f4b}
+.media-picker__credit{margin:0;font-size:.8rem;opacity:.7}
+.media-picker__chosen{display:flex;align-items:center;gap:10px;margin:0}
+.media-picker__chosen img{width:72px;height:54px;object-fit:cover;border-radius:8px}
+.media-picker__markets{display:flex;flex-wrap:wrap;gap:8px 18px;border:1px solid color-mix(in srgb,currentColor 18%,transparent);border-radius:10px;padding:10px 14px}
+.media-picker__markets label{display:flex;align-items:center;gap:6px}
+.media-picker__error{margin:0;color:#b3261e}
+.media-picker__actions{display:flex;gap:10px;flex-wrap:wrap}
+.vendor-product-thumb{width:84px;height:64px;object-fit:cover;border-radius:10px;display:block;margin-bottom:8px}
+.vendor-product-hint{display:block;color:#b3261e;margin-top:4px}

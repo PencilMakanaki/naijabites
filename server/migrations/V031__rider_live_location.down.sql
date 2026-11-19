@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS delivery_live_locations;

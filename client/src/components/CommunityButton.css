@@ -1,0 +1,7 @@
+.community-fab {
+  position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 15;
+  display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 20px;
+  border-radius: var(--radius-pill); background: var(--deep); color: #fff; font-weight: 700; text-decoration: none; box-shadow: var(--shadow-md);
+}
+.community-fab:hover { background: var(--green-hover); }
+@media (max-width: 480px) { .community-fab { padding: 0 16px; } }

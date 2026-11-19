@@ -1,0 +1,34 @@
+{
+  "name": "naijabites",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NaijaBites marketplace: React storefront, Express API and MySQL 8.4",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w server",
+    "start": "npm run start -w server",
+    "test": "npm test --workspaces --if-present",
+    "db:migrate": "npm run db:migrate -w server",
+    "db:status": "npm run db:status -w server",
+    "db:rollback": "npm run db:rollback -w server",
+    "admin:create": "npm run admin:create -w server",
+    "smoke:login": "npm run smoke:login -w server",
+    "dev:web": "npm run dev -w client",
+    "build": "npm run build -w client",
+    "smoke:accounts": "npm run smoke:accounts -w server",
+    "seed:dev": "npm run seed:dev -w server",
+    "smoke:catalogue": "npm run smoke:catalogue -w server",
+    "db:backup": "bash backup-db.sh"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  }
+}

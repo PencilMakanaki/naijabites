@@ -1,0 +1,2 @@
+export const DELIVERY_TRANSITIONS = Object.freeze({ accept: ['assigned','accepted'], reject: ['assigned','pending_assignment'], pickup: ['accepted','picked_up'], transit: ['picked_up','in_transit'], complete: ['in_transit','delivered'] });
+export function canApplyDeliveryAction(status, action) { if (action === 'reject') return ['assigned','accepted'].includes(status); const transition = DELIVERY_TRANSITIONS[action]; return Boolean(transition && status === transition[0]); }

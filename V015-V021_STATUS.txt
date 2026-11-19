@@ -1,0 +1,20 @@
+NaijaBites V015-V021 reconstruction status
+
+This package reconstructs the V015-V021 migrations and selected application foundations from the original V001-V014 archive plus recovered prior-chat handover decisions.
+It is not an exact restoration of the prior working directory.
+
+Verified in this package:
+- V001-V021 migration filenames form a consecutive sequence with both up/down files.
+- JavaScript syntax checks passed for server/src, server/test, shared/src, shared/test and client/src files.
+- 7 focused reconstruction tests passed.
+
+Not verified / not complete:
+- MySQL 8.4 migration execution and rollback.
+- Full server/shared/client test suite and frontend production build.
+- Complete branch inventory management HTTP/service integration.
+- Transaction-safe checkout branch selection and branch reservation creation.
+- Payment settlement branch stock deduction and cancellation/rejection reservation release.
+- V022 inventory movement ledger.
+- Dynamic delivery quote integration into checkout/payment; flat-rate checkout remains active.
+
+Do not run migrations on production without a verified backup, SQL review, staging validation and explicit approval.

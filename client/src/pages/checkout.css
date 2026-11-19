@@ -1,0 +1,14 @@
+.checkout-page { padding-top: 30px; padding-bottom: 64px; }
+.checkout-page h1 { margin: 4px 0 22px; color: var(--green); }
+.checkout-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: 18px; align-items: start; }
+.checkout-grid h2 { margin: 0 0 16px; font-size: var(--text-lg); }
+.checkout-addresses { display: grid; gap: 10px; margin-bottom: 14px; }
+.checkout-address { display: flex; gap: 10px; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius-md); cursor: pointer; }
+.checkout-address.is-selected { border-color: var(--green); background: var(--success-bg); }
+.checkout-address input { margin-top: 4px; }
+.checkout-summary { display: grid; gap: 14px; }
+.checkout-summary > div { display: flex; justify-content: space-between; gap: 12px; }
+.checkout-total { padding-top: 12px; border-top: 1px solid var(--line); font-size: var(--text-lg); }
+.checkout-summary .btn { width: 100%; }
+.checkout-blockers { margin: 0; padding-left: 20px; color: #a33; }
+@media (max-width: 760px) { .checkout-grid { grid-template-columns: 1fr; } }

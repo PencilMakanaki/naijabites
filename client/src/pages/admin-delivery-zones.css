@@ -1,0 +1,221 @@
+.admin-delivery {
+  display: grid;
+  gap: 24px;
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+.admin-delivery__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-delivery__header h1 {
+  margin-top: 5px;
+  color: var(--green);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+}
+
+.admin-delivery__back {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.admin-delivery__back:hover {
+  text-decoration: underline;
+}
+
+.admin-delivery__notice {
+  padding: 14px 16px;
+  border: 1px solid var(--green);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  color: var(--green);
+  font-weight: 600;
+}
+
+.admin-delivery__form-card {
+  gap: 20px;
+}
+
+.admin-delivery__form-card h2,
+.admin-delivery__list-heading h2 {
+  color: var(--green);
+  font-size: var(--text-lg);
+  font-weight: 800;
+}
+
+.admin-delivery__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-delivery__form .field:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.admin-delivery__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-delivery__error {
+  grid-column: 1 / -1;
+  color: #b42318;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.admin-delivery__list {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-delivery__list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-delivery__list-heading span {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.admin-delivery__table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-delivery__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-delivery__table th,
+.admin-delivery__table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--text-sm);
+  vertical-align: middle;
+}
+
+.admin-delivery__table th {
+  background: var(--cream);
+  color: var(--green);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.admin-delivery__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-delivery__status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.admin-delivery__status--active {
+  background: #e5f5e9;
+  color: #18733b;
+}
+
+.admin-delivery__status--inactive {
+  background: #fce8e6;
+  color: #b42318;
+}
+
+.admin-delivery__row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 700px) {
+  .admin-delivery__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-delivery__form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-delivery__form .field:nth-child(4),
+  .admin-delivery__actions {
+    grid-column: auto;
+  }
+
+  .admin-delivery__table-wrap {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .admin-delivery__table,
+  .admin-delivery__table tbody,
+  .admin-delivery__table tr,
+  .admin-delivery__table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-delivery__table thead {
+    display: none;
+  }
+
+  .admin-delivery__table tbody {
+    display: grid;
+    gap: 14px;
+  }
+
+  .admin-delivery__table tr {
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--card);
+  }
+
+  .admin-delivery__table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--line);
+    text-align: right;
+  }
+
+  .admin-delivery__table td:last-child {
+    border-bottom: 0;
+  }
+
+  .admin-delivery__table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .admin-delivery__row-actions {
+    justify-content: flex-end;
+  }
+}

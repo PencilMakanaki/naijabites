@@ -1,0 +1,4 @@
+.footer { margin-top: 48px; background: var(--footer-bg); border-top: 1px solid var(--line); }
+.footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 20px; padding-bottom: 28px; color: var(--muted); }
+.footer__links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.footer__links a { color: var(--green); font-weight: 700; }

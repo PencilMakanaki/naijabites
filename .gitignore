@@ -1,0 +1,14 @@
+node_modules/
+.env
+dist/
+coverage/
+*.log
+uploads/
+.DS_Store
+backups/
+diag-email.mjs
+diag-rider.mjs
+diag-tracking.mjs
+make-test-vendor.mjs
+check-order.mjs
+*.bak

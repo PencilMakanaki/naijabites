@@ -1,0 +1,21 @@
+CREATE TABLE customer_addresses (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  public_id CHAR(26) NOT NULL,
+  user_id BIGINT UNSIGNED NOT NULL,
+  recipient_name VARCHAR(80) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  address_line1 VARCHAR(200) NOT NULL,
+  address_line2 VARCHAR(200) NULL,
+  area VARCHAR(80) NOT NULL,
+  city VARCHAR(80) NOT NULL,
+  state VARCHAR(80) NOT NULL,
+  landmark VARCHAR(160) NULL,
+  delivery_instructions VARCHAR(500) NULL,
+  is_default TINYINT(1) NOT NULL DEFAULT 0,
+  created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+  updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_customer_addresses_public_id (public_id),
+  KEY ix_customer_addresses_user (user_id, is_default, id),
+  CONSTRAINT fk_customer_addresses_user FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

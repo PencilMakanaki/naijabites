@@ -1,0 +1,9 @@
+.payment-result-page { min-height: 55vh; display: grid; place-items: center; padding-top: 42px; padding-bottom: 64px; }
+.payment-result-card { width: min(100%, 560px); display: grid; justify-items: center; gap: 16px; padding: clamp(24px, 5vw, 44px); text-align: center; }
+.payment-result-card h1 { color: var(--green); font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.payment-result-card > p:not(.eyebrow) { max-width: 44ch; }
+.payment-result-icon { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; background: var(--cream); color: var(--green); font-size: 2rem; font-weight: 800; }
+.payment-result-icon--success { background: var(--success-bg); }
+.payment-result-icon--failed, .payment-result-icon--error { background: #fff0ed; color: #a33; }
+.payment-reference { overflow-wrap: anywhere; font-size: var(--text-xs); }
+.payment-result-card .btn { margin-top: 6px; }

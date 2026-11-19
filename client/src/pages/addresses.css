@@ -1,0 +1,16 @@
+.addresses-page { padding-top: 30px; padding-bottom: 64px; display: grid; gap: 20px; }
+.addresses-page__head { display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+.addresses-page__head h1 { margin: 4px 0; color: var(--green); }
+.addresses-page__head > a { color: var(--green); font-weight: 700; }
+.address-form-card h2, .address-list h2 { margin: 0 0 16px; font-size: var(--text-lg); }
+.address-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.address-form .field:nth-child(3), .address-form .field:nth-child(4), .address-form .field:nth-child(8), .address-form .field:nth-child(9) { grid-column: 1 / -1; }
+.address-check { display: flex; align-items: center; gap: 9px; }
+.address-form__actions { display: flex; gap: 10px; }
+.address-list { display: grid; gap: 12px; }
+.address-card { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.address-card h3 { margin: 0 0 6px; }
+.address-card p { margin: 3px 0; }
+.address-default { display: inline-block; margin-left: 8px; border-radius: 999px; padding: 3px 8px; color: var(--success-ink); background: var(--success-bg); font-size: var(--text-xs); }
+.address-card__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 680px) { .address-form { grid-template-columns: 1fr; } .address-form .field { grid-column: 1 / -1; } .address-card, .addresses-page__head { align-items: flex-start; flex-direction: column; } }

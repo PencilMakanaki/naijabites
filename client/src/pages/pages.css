@@ -1,0 +1,11 @@
+.muted { color: var(--muted); }
+.admin-home { padding-top: 32px; display: grid; gap: 14px; }
+.admin-home h1 { font-size: var(--text-xl); font-weight: 800; color: var(--green); }
+.card { display: grid; gap: 12px; justify-items: start; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--card); box-shadow: var(--shadow-sm); }
+.message { display: grid; gap: 12px; justify-items: start; padding-top: 48px; }
+.message h1 { font-size: var(--text-xl); font-weight: 800; color: var(--green); }
+.vendor-page { padding-top: 28px; }
+.vendor-page h1 { margin-top: 4px; font-size: var(--text-2xl); font-weight: 800; color: var(--green); line-height: 1.1; }
+.vendor-page__about { margin-top: 10px; max-width: 640px; font-size: var(--text-md); color: var(--muted); }
+.vendor-page__where { display: flex; align-items: center; gap: 6px; margin-top: 8px; color: var(--muted); }
+.vendor-page__menu { margin-top: 28px; font-size: var(--text-xl); font-weight: 800; color: var(--green); }

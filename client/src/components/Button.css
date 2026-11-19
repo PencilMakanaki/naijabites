@@ -1,0 +1,15 @@
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border-radius: var(--radius-sm); border: 1px solid var(--green);
+  font-weight: 700; font-size: var(--text-sm); text-decoration: none; line-height: 1.2; white-space: nowrap; flex-shrink: 0;
+  transition: background-color 0.15s, color 0.15s;
+}
+.btn--md { min-height: 44px; padding: 0 18px; }
+.btn--sm { min-height: 36px; padding: 0 12px; }
+.btn--lg { min-height: 52px; padding: 0 22px; font-size: var(--text-md); }
+.btn--primary { background: var(--green); color: #fff; }
+.btn--primary:hover:not(:disabled) { background: var(--green-hover); border-color: var(--green-hover); }
+.btn--outline { background: var(--card); color: var(--green); }
+.btn--outline:hover:not(:disabled) { background: var(--cream); }
+.btn--block { width: 100%; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }

@@ -1,0 +1,9 @@
+.side-card { padding: 18px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--card); }
+.side-card + .side-card { margin-top: var(--gap); }
+.side-card h2 { font-size: var(--text-md); font-weight: 800; line-height: 1.2; }
+.side-card--support { display: flex; justify-content: space-between; gap: 10px; border: 0; background: linear-gradient(135deg, #fff0d7, #ffe4bf); }
+.side-card--support p { margin: 6px 0 12px; color: var(--muted); }
+.side-card__art { align-self: end; font-size: 44px; line-height: 1; }
+.side-card__list { display: grid; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; font-weight: 700; font-size: var(--text-sm); }
+.side-card__list li { display: flex; align-items: center; gap: 10px; }
+.side-card__list li > span { font-size: 22px; }

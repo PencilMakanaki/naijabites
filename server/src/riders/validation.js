@@ -1,0 +1,3 @@
+import {validationFailed} from '../http/errors.js';
+const TYPES=new Set(['motorcycle','bicycle','car','van']);
+export function validateRiderApplication(v){const phone=String(v.phone||'').trim(),vehicleType=String(v.vehicleType||'').trim().toLowerCase(),vehicleRegistration=String(v.vehicleRegistration||'').trim();const errors={};if(!/^\+?[0-9][0-9\s()-]{7,18}$/.test(phone))errors.phone='Enter a valid phone number.';if(!TYPES.has(vehicleType))errors.vehicleType='Choose a supported vehicle.';if(vehicleRegistration&&!/^[A-Za-z0-9 -]{3,30}$/.test(vehicleRegistration))errors.vehicleRegistration='Enter a valid vehicle registration.';if(Object.keys(errors).length)throw validationFailed(errors);return {phone,vehicleType,vehicleRegistration:vehicleRegistration||null};}

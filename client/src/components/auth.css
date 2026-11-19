@@ -1,0 +1,42 @@
+.auth { min-height: 100dvh; background: var(--cream); }
+.auth__header { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: var(--page-width); margin: 0 auto; padding: 20px; }
+.auth__back { font-weight: 700; color: var(--green); text-decoration: none; }
+.auth__back:hover { text-decoration: underline; }
+
+.auth-card-wrap { display: grid; place-items: start center; padding: 24px 16px 64px; }
+.auth-card {
+  width: min(460px, 100%); padding: 32px; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  background: var(--card); box-shadow: var(--shadow-md);
+}
+.auth-card h1 { margin: 6px 0 4px; font-size: var(--text-xl); font-weight: 800; color: var(--green); line-height: 1.15; }
+.auth-card__sub { margin-bottom: 18px; color: var(--muted); }
+.auth-form { display: flex; flex-direction: column; gap: 16px; }
+.auth-card__foot { margin-top: 18px; text-align: center; color: var(--muted); }
+.auth-card__foot a { font-weight: 700; }
+.notice { padding: 12px 14px; border-radius: var(--radius-sm); background: var(--success-bg); color: var(--success-ink); font-weight: 700; }
+
+/* sign-up: two columns like the original page */
+.signup { display: grid; grid-template-columns: 1fr minmax(380px, 480px); gap: 64px; align-items: center; max-width: var(--page-width); margin: 0 auto; padding: 24px 20px 64px; }
+.signup__pitch .eyebrow { margin-bottom: 14px; }
+.signup__title { font-size: clamp(2.3rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.04; color: var(--green); letter-spacing: -0.02em; }
+.signup__text { margin-top: 18px; max-width: 420px; font-size: var(--text-md); color: var(--muted); }
+.signup__list { display: grid; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; font-weight: 700; }
+.signup__list li { display: flex; align-items: center; gap: 12px; }
+.signup__tick { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--success-bg); color: var(--success-ink); font-size: 14px; }
+.signup__tiles { display: flex; gap: 14px; margin-top: 28px; }
+.signup__tile { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; font-size: 30px; }
+.signup__tile:nth-child(1) { background: #f3e9d6; transform: rotate(-4deg); }
+.signup__tile:nth-child(2) { background: #f9dfd0; transform: rotate(3deg); }
+.signup__tile:nth-child(3) { background: #e3ead9; transform: rotate(-2deg); }
+@media (max-width: 900px) {
+  .signup { grid-template-columns: 1fr; gap: 28px; }
+  .signup__pitch { order: 2; }
+  .auth-card { padding: 24px; }
+}
+
+.verify-banner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px;
+  padding: 10px 20px; background: var(--warn-bg); color: var(--warn-ink);
+}
+.verify-banner__action { min-height: 36px; padding: 0 14px; border: 1px solid var(--warn-ink); border-radius: var(--radius-sm); background: transparent; color: var(--warn-ink); font-weight: 700; }
+.verify-banner__error { color: var(--danger); font-weight: 700; }

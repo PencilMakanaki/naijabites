@@ -1,0 +1,52 @@
+CREATE TABLE rider_profiles (
+ id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+ user_id BIGINT UNSIGNED NOT NULL,
+ public_id CHAR(26) NOT NULL,
+ phone VARCHAR(20) NOT NULL,
+ vehicle_type VARCHAR(30) NOT NULL,
+ vehicle_registration VARCHAR(30) NULL,
+ status VARCHAR(20) NOT NULL DEFAULT 'pending',
+ approved_by BIGINT UNSIGNED NULL,
+ approved_at DATETIME(3) NULL,
+ created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+ updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+ PRIMARY KEY(id), UNIQUE KEY uq_rider_profiles_user(user_id), UNIQUE KEY uq_rider_profiles_public_id(public_id),
+ KEY ix_rider_profiles_status(status),
+ CONSTRAINT fk_rider_profiles_user FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE RESTRICT,
+ CONSTRAINT fk_rider_profiles_approver FOREIGN KEY(approved_by) REFERENCES users(id) ON DELETE RESTRICT,
+ CONSTRAINT ck_rider_profiles_status CHECK(status IN ('pending','approved','suspended','rejected'))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE deliveries (
+ id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+ public_id CHAR(26) NOT NULL,
+ order_id BIGINT UNSIGNED NOT NULL,
+ rider_id BIGINT UNSIGNED NULL,
+ status VARCHAR(24) NOT NULL DEFAULT 'pending_assignment',
+ pickup_code_hash VARCHAR(255) NULL,
+ delivery_code_hash VARCHAR(255) NULL,
+ assigned_at DATETIME(3) NULL,
+ picked_up_at DATETIME(3) NULL,
+ delivered_at DATETIME(3) NULL,
+ failed_reason VARCHAR(500) NULL,
+ created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+ updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+ PRIMARY KEY(id), UNIQUE KEY uq_deliveries_public_id(public_id), UNIQUE KEY uq_deliveries_order(order_id),
+ KEY ix_deliveries_rider_status(rider_id,status,created_at),
+ CONSTRAINT fk_deliveries_order FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE RESTRICT,
+ CONSTRAINT fk_deliveries_rider FOREIGN KEY(rider_id) REFERENCES rider_profiles(id) ON DELETE RESTRICT,
+ CONSTRAINT ck_deliveries_status CHECK(status IN ('pending_assignment','assigned','picked_up','in_transit','delivered','failed','returned'))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE delivery_status_events (
+ id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+ delivery_id BIGINT UNSIGNED NOT NULL,
+ actor_user_id BIGINT UNSIGNED NULL,
+ old_status VARCHAR(24) NULL,
+ new_status VARCHAR(24) NOT NULL,
+ note VARCHAR(500) NULL,
+ latitude DECIMAL(10,7) NULL,
+ longitude DECIMAL(10,7) NULL,
+ created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+ PRIMARY KEY(id), KEY ix_delivery_status_events_delivery(delivery_id,created_at),
+ CONSTRAINT fk_delivery_status_events_delivery FOREIGN KEY(delivery_id) REFERENCES deliveries(id) ON DELETE RESTRICT,
+ CONSTRAINT fk_delivery_status_events_actor FOREIGN KEY(actor_user_id) REFERENCES users(id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
